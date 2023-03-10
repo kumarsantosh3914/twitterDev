@@ -17,6 +17,6 @@ app.listen(3000, async () => {
     // const tweets = await Tweet.find();
     // console.log(tweets);
     const tweetRepo = new TweetRepository();
-    const tweet = await tweetRepo.get('640b290730880f36504c0157');
+    const tweet = await tweetRepo.getAll(2, 4);
     console.log(tweet);
 })
