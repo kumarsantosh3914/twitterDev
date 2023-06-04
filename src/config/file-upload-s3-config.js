@@ -1,3 +1,34 @@
+// import multer from 'multer';
+// import multerS3 from 'multer-s3';
+// import aws from 'aws-sdk';
+// import dotenv from 'dotenv';
+
+// dotenv.config();
+
+// aws.config.update({
+//     region: process.env.AWS_REGION,
+//     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+//     accessKeyId: process.env.ACCESS_KEY_ID
+// });
+
+// const s3 = new aws.S3();
+
+// const upload = multer({
+//     storage: multerS3({
+//         s3: s3,
+//         bucket: process.env.BUCKET_NAME,
+//         acl: 'public-read',
+//         metadata: function (req, file, cb) {
+//             cb(null, { filedName: file.fieldname });
+//         },
+//         key: function (req, file, cb) {
+//             cb(null, Date.now().toString());
+//         }
+//     })
+// });
+
+// export default upload;
+
 import multer from 'multer';
 import multerS3 from 'multer-s3';
 import aws from 'aws-sdk';
@@ -6,9 +37,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 aws.config.update({
-    region: process.env.AWS_REGION,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    accessKeyId: process.env.ACCESS_KEY_ID
+    // region: process.env.AWS_REGION,
+    // secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    // accessKeyId: process.env.ACCESS_KEY_ID,
+    region: 'ap-south-1',
+    secretAccessKey: 'V3BtXq8Gh7zIbQS/yJFjLbCz/1R4DOYCkMiixXyG',
+    accessKeyId: 'AKIAYTVHKSA3U2GLDLZH'
 });
 
 const s3 = new aws.S3();
@@ -16,13 +50,13 @@ const s3 = new aws.S3();
 const upload = multer({
     storage: multerS3({
         s3: s3,
-        bucket: process.env.BUCKET_NAME,
+        bucket: 'twitterimagebucket',
         acl: 'public-read',
         metadata: function (req, file, cb) {
-            cb(null, { filedName: file.fieldname });
+            cb(null, { fieldName: file.fieldname });
         },
         key: function (req, file, cb) {
-            cb(null, Date.now().toString());
+            cb(null, Date.now().toString())
         }
     })
 });
