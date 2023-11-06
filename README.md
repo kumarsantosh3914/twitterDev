@@ -1,3 +1,93 @@
+# APIs
+- Sign up localhost:3002/api/v1/signup - POST request object:
+  ```
+  {
+      email: <email>,
+      password: <password>,
+      name: <username>
+    }
+  ```
+
+
+  success response object:
+    ```
+    {
+        "success": true,
+        "message": "Successfully created a new user",
+        "data": {
+            "email": "santu@gmail.com",
+            "password": "$2b$09$SoD6Fz4Ur1AQsJ5sfpERq.z3iPXDFEUyaPRl9MxgOHXC5ffnVXMjm",
+            "name": "Santosh",
+            "_id": "6548dcea67a9a82bc38f529b",
+            "createdAt": "2023-11-06T12:32:42.594Z",
+            "updatedAt": "2023-11-06T12:32:42.594Z",
+            "__v": 0
+        },
+        "err": {}
+    }
+    ```
+  
+  failure response object: 
+  ```
+  {
+    "message": "Something went wrong",
+    "data": {},
+    "success": false,
+    "err": {
+        "index": 0,
+        "code": 11000,
+        "keyPattern": {
+            "email": 1
+        },
+        "keyValue": {
+            "email": "santu@gmail.com"
+        }
+    }
+  }
+
+  ```
+
+
+- Sing in localhost:3002/api/v1/login - POST request object:
+
+
+    ```
+  {
+      email: <email>,
+      password: <password>,
+      name: <username>
+  }
+  ```
+
+  success response object:
+
+  ```
+  {
+    "success": true,
+    "message": "Successfully logged in",
+    "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDhkY2VhNjdhOWE4MmJjMzhmNTI5YiIsImVtYWlsIjoic2FudHVAZ21haWwuY29tIiwiaWF0IjoxNjk5Mjc0Nzc4LCJleHAiOjE2OTkyNzgzNzh9.coFvKeYXnaEu2vE6naRsp-0SxLQv-m2OUznZIYlmwnI",
+    "err": {}
+  } 
+  ```
+
+  failure response object:
+
+  ```
+  {
+    "message": "Something went wrong controller",
+    "data": {},
+    "success": false,
+    "err": {
+        "message": "incorrect password",
+        "success": false
+    }
+  }
+  ```
+
+
+
+
+
 # Requirements
 
 - User should be able to create a post
