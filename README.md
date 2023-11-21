@@ -84,7 +84,23 @@
   }
   ```
 
-
+- Get tweet by id: localhost:3002/api/v1/tweets/6413683b87edac2ef1994f6e - Get
+  - Success response object
+  ```
+  {
+    "success": true,
+    "message": "Successfully fetched a tweet",
+    "data": {
+        "_id": "6413683b87edac2ef1994f6e",
+        "content": "i am #excited and going to do #fun, #newjob #lovelife",
+        "hashtags": [],
+        "createdAt": "2023-03-16T19:04:27.792Z",
+        "updatedAt": "2023-03-16T19:04:27.792Z",
+        "__v": 0
+    },
+    "err": {}
+  }
+  ```
 
 
 
